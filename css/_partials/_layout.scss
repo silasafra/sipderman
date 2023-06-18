@@ -1,0 +1,126 @@
+.container {
+  max-width: 1440px;
+  margin: 0 auto;
+  padding: 36px 16px;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  overflow: hidden;
+
+  .container-item-1 {
+    max-width: 576px;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+
+    .social {
+      display: flex;
+      align-items: center;
+      margin-top: 40px;
+      gap: 16px;
+      img {
+        height: 24px;
+        display: block;
+      }
+    }
+
+    .btn-box {
+      display: flex;
+      gap: 16px;
+    }
+    .btn {
+      display: inline-block;
+      padding: 12px 32px;
+      border-radius: 3px;
+      transform: skewX(-10deg);
+      text-transform: uppercase;
+      background: linear-gradient(267.72deg, #f02a2f 0.88%, #ea1d22 100%);
+      position: relative;
+      transition: 0.7s ease;
+
+      &::before {
+        content: '';
+        width: 50px;
+        height: 40px;
+        display: block;
+        border-top: 3px solid $withe;
+        border-left: 3px solid $withe;
+        position: absolute;
+        top: -3px;
+        left: -3px;
+        border-radius: 4px;
+        opacity: 0;
+        transition: 0.5s ease;
+      }
+      &::after {
+        content: '';
+        display: block;
+        width: 50px;
+        height: 40px;
+        border-bottom: 3px solid $withe;
+        border-right: 3px solid $withe;
+        position: absolute;
+        bottom: -3px;
+        right: -3px;
+        border-radius: 4px;
+        transition: 0.7s ease;
+        opacity: 0;
+      }
+
+      &:hover {
+        transform: skewX(-10deg) scale(1.1);
+        &::before {
+          top: -4px;
+          left: -4px;
+          opacity: 1;
+        }
+        &::after {
+          bottom: -4px;
+          right: -4px;
+          opacity: 1;
+        }
+      }
+    }
+    .btn-secundary {
+      display: inline-block;
+      padding: 12px 32px;
+      border-radius: 3px;
+      transform: skewX(-10deg);
+      text-transform: uppercase;
+      border: 2px solid $red;
+      position: relative;
+      transition: 0.7s ease;
+      overflow: hidden;
+
+      &::after {
+        content: '';
+        display: block;
+        width: 0%;
+        height: 100%;
+        background: linear-gradient(267.72deg, #f02a2f 0.88%, #ea1d22 100%);
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        transition: 0.7s ease;
+        z-index: -1;
+      }
+
+      &:hover {
+        transform: skewX(-10deg) scale(1.1);
+
+        &::after {
+          width: 105%;
+          height: 102%;
+          background: linear-gradient(267.72deg, #f02a2f 0.88%, #ea1d22 100%);
+        }
+      }
+    }
+
+    .container-item-2 {
+      .spiderman {
+        width: 150%;
+        transform: translate3d(-150px, 0, 0);
+      }
+    }
+  }
+}
