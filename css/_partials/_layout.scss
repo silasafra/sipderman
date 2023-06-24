@@ -1,3 +1,38 @@
+.bg-load {
+  background: linear-gradient(225deg, $red 0%, $red-dark 100%);
+  position: absolute;
+  top: 0;
+  width: 100vw;
+  height: 100vh;
+  z-index: 500;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  svg {
+    max-width: 150px;
+  }
+  .logo-spiderman {
+    fill: transparent;
+    animation: load-spiderman 10s ease infinite alternate;
+  }
+  @keyframes load-spiderman {
+    0% {
+      stroke-width: 0;
+      fill: transparent;
+      stroke-dasharray: 1 100;
+    }
+    25% {
+      stroke-width: 1;
+      stroke-dasharray: 100 0;
+    }
+    100% {
+      stroke-width: 0.3;
+      fill: $withe-dark;
+    }
+  }
+}
+
 .bg-video {
   position: absolute;
   top: 0;
@@ -145,12 +180,17 @@
         }
       }
     }
+  }
+}
+.container-item-2 {
+  .img-box {
+    display: flex;
+    align-items: center;
+    justify-content: center;
 
-    .container-item-2 {
-      .spiderman {
-        width: 150%;
-        transform: translate3d(-150px, 0, 0);
-      }
+    .spiderman {
+      width: 110%;
+      transform: translate3d(-150px, 0, 0);
     }
   }
 }
